@@ -1,0 +1,144 @@
+.cart{
+  margin-top: 100px;
+
+}
+.cart-items-title{
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr 1fr 1fr 0.5fr;
+  align-items: center;
+  color: grey;
+  font-size: max(1vw,12px);
+
+}
+.cart-items-item{
+  margin: 10px 0px;
+  border-radius: 30%;
+  color: black;
+}
+.cart-items-item img{
+  width: 50px;
+}
+.cart hr{
+  height: 1px ;
+  background-color: #e2e2e2;
+  border: none;
+
+}
+.cart-items-item .cross{
+  cursor: pointer;
+}
+
+
+.car-bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap:max(10vw,20px);
+  
+}
+
+.cart-total {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+}
+
+.cart-total h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.cart-total-details {
+  display: flex;
+  justify-content: space-between;
+  color :#555;
+}
+
+.cart-total-details p {
+  margin: 0;
+  font-size: 18px;
+}
+
+.cart-total hr {
+  border: none;
+  border-top: 1px solid #e0e0e0;
+  margin: 10px 0;
+}
+
+button {
+  width: max(15vw,200px);
+  padding: 12px 0px;
+  background-color: tomato;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.cart-promo-code {
+  flex:1;
+}
+
+.cart-promo-code p {
+ color:#555;
+
+}
+
+.cart-promocode-input {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #eaeaea;
+  border-radius: 4px;
+
+}
+
+.cart-promocode-input input {
+  outline: none;
+  padding-left: 10px;
+  border: none;
+  background: transparent;
+}
+
+.cart-promocode-input button {
+  padding: 10px 5px;
+  width: max(10vw,50px);
+  background-color: tomato;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+}
+
+.cart-promocode-input button:hover {
+  background-color: #218838;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .car-bottom {
+    padding: 10px;
+  }
+
+  .cart-total h2 {
+    font-size: 20px;
+  }
+
+  .cart-total-details p {
+    font-size: 16px;
+  }
+
+  button, .cart-promocode-input button {
+    font-size: 16px;
+  }
+
+  .cart-promocode-input input {
+    font-size: 14px;
+  }
+}
