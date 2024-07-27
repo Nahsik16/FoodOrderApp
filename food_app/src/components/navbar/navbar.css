@@ -8,7 +8,7 @@
     font-family: Outfit;
 }
 .navbar .logo{
-  width: 200px;
+  width: 160px;
 
 }
 .navbar-menu{
@@ -62,7 +62,7 @@
 }
 @media (max-width:1050px) {
   .navbar-logo{
-    width:140px;
+    width:120px;
   }
   .navbar-menu{
     gap: 20px;
@@ -81,7 +81,7 @@
 }
 @media (max-width:900px) {
   .navbar-logo{
-    width:120px;
+    width:100px;
   }
   .navbar-menu{
     gap: 15px;
