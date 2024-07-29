@@ -18,9 +18,33 @@ const addFood = async (req, res) => {
     await food.save();
     res.json({ success: true, message: "Food Added" });
   } catch (error) {
-    console.log("Error saving food:", error); // Log the error
+    console.log("Error saving food:", error); 
     res.json({ success: false, message: "Error adding food" });
   }
 };
 
-export { addFood };
+//all food list
+const listFood=async(req,res)=>{
+  try{
+    const foods = await foodModel.find({});
+    res.json({ success: true, data: foods });
+  }catch(error){
+    console.log("Error getting food:", error);
+    res.json({ success: false, message: "Error getting food" });
+  }
+}
+//remove
+const removeFood = async(req,res)=>{
+  try{
+    const food = await foodModel.findById(req.body.id);
+    fs.unlink(`uploads/${food.image}`,()=>{})
+    await foodModel.findByIdAndDelete(req.body.id);
+    res.json({success:true,message:"Food removed"});
+  }
+  catch(error){
+    console.log("Error removing food:", error);
+    res.json({ success: false, message: "Error removing food" });
+  }
+}
+
+export { addFood,listFood,removeFood };
