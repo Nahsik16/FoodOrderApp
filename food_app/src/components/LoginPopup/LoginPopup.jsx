@@ -9,7 +9,7 @@ import axios from "axios"
 const LoginPopup = ({setShowLogin}) => {
 
   const {url,setToken} =useContext(StoreContext)
-  const[currState,setCurrState] =useState("Sign Up")
+  const[currState,setCurrState] =useState("Login")
   const [data,setData] = useState({
     name:"",
     email:"",
@@ -25,10 +25,10 @@ const LoginPopup = ({setShowLogin}) => {
 
     let newUrl =url;
     if(currState==="Login"){
-      newUrl += "api/user/login";
+      newUrl += "/api/user/login";
   }
   else{
-    newUrl += "api/user/register";
+    newUrl += "/api/user/register";
   }
   const response = await axios.post(newUrl,data);
   if(response.data.success){
@@ -53,6 +53,7 @@ const LoginPopup = ({setShowLogin}) => {
   <input name='email' onChange={onChangeHandler} value={data.email} type="email" placeholder='Your email' required/>
   <input name='password' onChange={onChangeHandler} value={data.password}  type="password" placeholder='password' required/>
 </div>
+
 <button type='submit'>{currState==="Sign Up"?"Create Account":"Login"}</button>
   <div className="login-popup-condition">
     <input type="checkbox" required />
