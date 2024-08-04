@@ -1,10 +1,11 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react'
 import "../List/List.css"
 import axios from 'axios';
 import { toast } from 'react-toastify';
-const List = () => {
-  const url ="http://localhost:4000"
+const List = ({url}) => {
   const [list,setList]= useState([]);
   const fetchList = async () => {
     try {
