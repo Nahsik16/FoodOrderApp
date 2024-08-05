@@ -2,7 +2,7 @@
 
 .navbar{
     display: flex;
-    justify-content: center;
+    justify-content: space-between ;
     align-items: center;
     padding:20px;
     font-family: Outfit;
@@ -133,6 +133,9 @@
   }
 }
 @media (max-width:750px) {
+  .navbar-search-icon{
+    display:none;
+  }
   
   .navbar-menu{
     display: none;
