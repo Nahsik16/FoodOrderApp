@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import axios from "axios";
-import { createContext,  useEffect,  useState } from "react";
+import { createContext, useEffect, useState } from "react";
+
 export const StoreContext = createContext(null);
 const StoreContextProvider = (props) => {
   const [cartItems, setcartItems] = useState({});
