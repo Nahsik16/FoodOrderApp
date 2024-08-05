@@ -31,8 +31,8 @@ const Navbar = ({setShowLogin}) => {
         <a href='#app-download' onClick={()=>setMenu("mobile-app")} className={menu==="mobile-app"?"active":""}>mobile-app</a>
         <a href='#footer' onClick={()=>setMenu("contact-us")} className={menu==="contact-us"?"active":""}>contact</a>
       </ul>
-      <div className="navbar-right">
-        <img src={assets.search_icon} alt="" />
+      <div className="navbar-right"><div className ="search">
+        <img src={assets.search_icon} alt="" /></div>
         <div className="navbar-search-icon">
          <Link to='/cart'><img src={assets.basket_icon} alt="" /></Link> 
           <div className={getTotalCartAmount()===0?"":"dot"}></div>
