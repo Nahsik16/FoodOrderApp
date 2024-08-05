@@ -5,7 +5,7 @@ import userModel from "../models/userModel.js";
 
 //place order
 const placeOrder =async (req,res) => {
-  const frontend_url ="http://localhost:5173"
+  const frontend_url ="https://tandoori-bites-frontend.onrender.com"
  try{
   const newOrder = new orderModel ({
     userId:req.body.userId,
