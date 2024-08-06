@@ -9,7 +9,7 @@ const Verify = () => {
   const [searchParams,setSearchParams]=useSearchParams();
   const success =searchParams.get("success")
   const orderId =searchParams.get("orderId")
-  const {url}=useContext(StoreContext);
+  const {url,token,setToken}=useContext(StoreContext);
   const navigate =useNavigate();
   const verifyPayment = async() =>{
     try {
@@ -25,6 +25,8 @@ const Verify = () => {
       console.error("Error verifying payment:", error);
       navigate("/cart");
       localStorage.removeItem("token");
+      setToken("");
+      navigate("/");
     }
   };
   useEffect(()=>{
