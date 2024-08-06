@@ -17,13 +17,14 @@ const Verify = () => {
       const response = await axios.post(url + "api/order/verify", { success, orderId });
       console.log("Response from server:", response.data);
       if (response.data.success) {
-        navigate("/myorders");
+        navigate("/myorders");   
       } else {
         navigate("/cart");
       }
     } catch (error) {
       console.error("Error verifying payment:", error);
       navigate("/cart");
+      localStorage.removeItem("token");
     }
   };
   useEffect(()=>{
