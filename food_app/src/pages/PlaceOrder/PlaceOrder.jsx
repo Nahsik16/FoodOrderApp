@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 // eslint-disable-next-line no-unused-vars
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import './PlaceOrder.css'
 import { StoreContext } from '../../context/StoreContext.jsx'
 import axios from 'axios';
@@ -22,7 +22,6 @@ const PlaceOrder = () => {
     const value = event.target.value;
     setData(data=>({...data,[name]:value}))
   }
-  /*
   const placeOrder = async (event) => {
     event.preventDefault();
     let orderItems = [];
@@ -39,10 +38,16 @@ const PlaceOrder = () => {
       amount:getTotalCartAmount()+4,
     }
     let response =await axios.post(url+"/api/order/place",orderData,{headers:{token}})   
-    alert("Accepted");
-  };*/
+    if(response.data.success){
+      const {session_url}=response.data;
+      window.location.replace(session_url);
+    }
+    else{
+      alert("ERROR");
+    }
+  };
   return (
-    <form /*onSubmit={placeOrder}*/ className='place-order'>
+    <form onSubmit={placeOrder} className='place-order'>
       <div className="place-order-left">
         <p className='title'> Delivery Info</p>
         <div className="multi-fields">
