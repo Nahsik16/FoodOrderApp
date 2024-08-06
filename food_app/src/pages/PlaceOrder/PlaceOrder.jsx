@@ -1,10 +1,14 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 // eslint-disable-next-line no-unused-vars
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './PlaceOrder.css'
 import { StoreContext } from '../../context/StoreContext.jsx'
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+
 const PlaceOrder = () => {
+  const navigate =useNavigate();
   const {getTotalCartAmount,token,food_list,cartItems,url}= useContext(StoreContext);
   const [data,setData]=useState({
     firstName:"",
@@ -35,7 +39,7 @@ const PlaceOrder = () => {
     let orderData={
       address:data,
       items:orderItems,
-      amount:getTotalCartAmount()+4,
+      amount:getTotalCartAmount()+40,
     }
     let response =await axios.post(url+"/api/order/place",orderData,{headers:{token}})   
     if(response.data.success){
@@ -43,9 +47,19 @@ const PlaceOrder = () => {
       window.location.replace(session_url);
     }
     else{
-      alert("ERROR");
+      navigate("/")
     }
   };
+  useEffect(()=>{
+    if(!token){
+      navigate("/cart")
+    }
+    else if(getTotalCartAmount()===0){
+      navigate('/cart')
+    }
+
+
+  },[token])
   return (
     <form onSubmit={placeOrder} className='place-order'>
       <div className="place-order-left">

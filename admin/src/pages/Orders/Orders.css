@@ -1,0 +1,83 @@
+.order-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.order-item img {
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+}
+
+.order-item div {
+  flex: 1;
+}
+
+.order-item-food {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.order-item-name {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+.order-item-address {
+  margin-bottom: 5px;
+}
+
+.order-item-address p {
+  margin: 0;
+}
+
+.order-item-phone {
+  margin-bottom: 5px;
+}
+
+.order-item select {
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+/* Media query for screens smaller than 768px */
+@media (max-width: 768px) {
+  .order-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .order-item img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+  }
+
+  .order-item div {
+    width: 100%;
+  }
+
+  .order-item select {
+    width: 100%;
+  }
+}
+
+/* Media query for screens smaller than 480px */
+@media (max-width: 480px) {
+  .order-item img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .order-item-name {
+    font-size: 1em;
+  }
+
+  .order-item select {
+    padding: 4px;
+  }
+}
