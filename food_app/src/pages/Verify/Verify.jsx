@@ -19,11 +19,11 @@ const Verify = () => {
       if (response.data.success) {
         navigate("/myorders");
       } else {
-        navigate("/");
+        navigate("/cart");
       }
     } catch (error) {
       console.error("Error verifying payment:", error);
-      navigate("/");
+      navigate("/cart");
     }
   };
   useEffect(()=>{
