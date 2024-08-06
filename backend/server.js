@@ -28,4 +28,3 @@ app.get("/",(req,res)=>{
 app.listen(port,()=>{
   console.log(`server started on http://localhost:${port}`)
 })
-//mongodb+srv://kishanwali16:verySecurePassword@cluster0.ldwnqqg.mongodb.net/?
