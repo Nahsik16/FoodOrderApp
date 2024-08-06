@@ -23,10 +23,14 @@ const Verify = () => {
       }
     } catch (error) {
       console.error("Error verifying payment:", error);
-      navigate("/cart");
+     if(token){
       localStorage.removeItem("token");
       setToken("");
       navigate("/");
+     }
+     else{
+        navigate("/");
+     }
     }
   };
   useEffect(()=>{
