@@ -26,10 +26,10 @@ const Verify = () => {
      if(token){
       localStorage.removeItem("token");
       setToken("");
-      window.location.href= url || "/";
-     }
+       navigate ("/");
+         }
      else{
-       window.location.href= url || "/";
+       navigate("/");
      }
     }
   };
